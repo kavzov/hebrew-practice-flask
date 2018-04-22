@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+
+{% block title %}Алфавит{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/num_main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/num_random.css') }}">
+{% endblock %}
+
+{% block custom_input %}
+<!-- Min max limits fields -->
+<div id="min-max-input" class="form-row">
+    <div class="col-3 col-lg-5 col-sm-4"></div>
+    <div class="col">
+        <input id="min-num" class="form-control" type="number">
+    </div>
+    <div class="col text-right">
+        <input id="max-num" class="form-control" type="number">
+        <div id="max-num-limit-tip"></div>
+    </div>
+    <div class="col-3 col-lg-5 col-sm-4"></div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/num_main.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/num_random.js') }}"></script>
+{% endblock %}

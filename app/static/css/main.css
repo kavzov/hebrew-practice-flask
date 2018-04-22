@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Tinos');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro|Source+Sans+Pro');
+
+body {
+    width: 100%;
+    overflow-x: hidden;  /* hide horizontal scroll after `form-row` bootstrap class */
+}
+
+.drawer-menu-item {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+    padding: .5em .5em .5em 1em;
+    font-size: 1.1em;
+    color: #222;
+}
+.drawer-menu-item:hover {
+    text-decoration: none;
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+/* Task */
+#task {
+    text-align: center;
+    font-size: 5em;
+    line-height: 1.2em;
+    margin-bottom: .3em;
+}
+
+/* Translate button */
+#translate-btn {
+    text-align: center;
+}
+#translate-btn>input {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2em;
+    width: 5.5em;
+    height: 2.3em;
+    padding: .3em;
+    margin: -3.5em 0 -3em;
+}
+
+/* Translate */
+#translation {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+.translit {
+    font-family: serif;
+    font-style: italic;
+}
+.hebrew {
+    font-family: 'Tinos', serif;
+    font-size: .9em;
+    color: #359;
+}
+
+/* Menu */
+.dropdown-toggle::after {
+    display: none;
+}
+#menu {
+    position:absolute;
+    z-index:100;
+    margin:.7em;
+    cursor:pointer;
+}
+#menu-sign {
+    font-size: 1.5em;
+}
+#menu-items {
+    font-size: 1.1em;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/*@media (max-width: 600px) {}*/

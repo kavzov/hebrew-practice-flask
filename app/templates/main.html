@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Drawer (http://git.blivesta.com/drawer/) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% endblock head %}
+</head>
+
+<body class="drawer drawer--left">
+
+<!-- Menu -->
+<header role="banner">
+    <button type="button" class="drawer-toggle drawer-hamburger" style="outline:none; width:25px;">
+        <span class="sr-only">toggle navigation</span>
+        <span class="drawer-hamburger-icon"></span>
+    </button>
+    <nav class="drawer-nav" role="navigation">
+        <ul class="drawer-menu">
+            <li class="text-center" style="font-family:Tinos; font-size:2.2em; color:#359; background-color:#f5f5f5; border-bottom:1px dotted #aaa; margin-bottom:.25em;">עברית</li>
+            <li><a class="drawer-menu-item" href="{{ url_for('alphabet') }}">Алфавит</a></li>
+            <li><a class="drawer-menu-item" href="{{ url_for('clock') }}">Время</a></li>
+            <li><a class="drawer-menu-item" href="{{ url_for('custom_numbers') }}">Ввод числа</a></li>
+            <li><a class="drawer-menu-item" href="{{ url_for('random_numbers') }}">Случайное число</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!- Main -->
+<main role="main">
+{% block content %}
+
+{% block custom_input %}{% endblock %}
+
+<!-- Task -->
+<div id="task"></div>
+
+<!-- Translate button -->
+<div id="translate-btn">
+    <input class="btn btn-primary" type="button">
+</div>
+
+<!-- Translation -->
+<div id="translation">
+    <div class="translit"></div>
+    <div class="hebrew"></div>
+</div>
+
+{% endblock content %}
+</main>
+
+<!-- Footer -->
+<footer>
+{% block footer %}{% endblock %}
+</footer>
+
+<!-- JavaScript -->
+{% block javascript %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
+<script>
+$(document).ready(function() {
+  $('.drawer').drawer();
+});
+</script>
+
+</body>
+</html>

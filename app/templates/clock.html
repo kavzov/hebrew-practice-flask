@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block title %}Алфавит{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/num_main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/clock.css') }}">
+{% endblock %}
+
+{% block javascript %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/num_main.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/clock.js') }}"></script>
+{% endblock %}
