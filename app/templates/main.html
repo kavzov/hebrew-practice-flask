@@ -48,6 +48,13 @@
 <!-- Task -->
 <div id="task"></div>
 
+{% block gender_choice %}
+<div class="gender-choice">
+    <label><input type="radio" name="gender" checked>&nbsp;Жен</label>&ensp;
+    <label><input type="radio" name="gender">&nbsp;Муж</label>
+</div>
+{% endblock %}
+
 <!-- Translate button -->
 <div id="translate-btn">
     <input class="btn btn-primary" type="button">

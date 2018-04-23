@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/alphabet.css') }}">
 {% endblock %}
 
+{% block gender_choice %}{% endblock %}
+
 {% block javascript %}
     {{ super() }}
     <script type="text/javascript" src="{{ url_for('static', filename='js/alphabet.js') }}"></script>
