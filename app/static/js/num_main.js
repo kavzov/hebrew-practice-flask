@@ -48,7 +48,7 @@ function getDigPrep(dig, lang) {
     let digPref = {
         '1': ' вэ ', '2': ' у ',  '3': ' вэ ',  '4': ' вэ ',  '5': ' вэ ',   '6': ' ва ',   '7': ' ва ',   '8': ' у ',   '9': ' ва ',
     };
-    return (lang === 'rus') ? digPref[dig] : ' ו';
+    return (isRussian(lang)) ? digPref[dig] : ' ו';
     // return (lang === 'rus') ? ' вэ ' : ' ו';
 }
 
@@ -83,6 +83,18 @@ function twoDigNum(num, lang, gender) {
             str += getDigPrep(num[1], lang) + getDigit(num[1], lang, gender);
     }
     return str;
+}
+
+function getGender() {
+    return $('[name="gender"]:checked').val();
+}
+
+function isMale(gender) {
+    return gender == 0;
+}
+
+function isFemale(gender) {
+    return gender == 1;
 }
 
 function translateNumber(number, lang, gender) {

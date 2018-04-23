@@ -4,7 +4,7 @@ let customNum = '#custom-num';
 
 /** Functions **/
 function outputContent() {
-    let gender = 1;     // TODO take from radio input
+    let gender = getGender();
     // empty field or value < min allowed -> set min allowed
     let num = $(customNum).val();
     if (num === '' || parseInt(num) < minNumVal) {
@@ -27,6 +27,12 @@ function outputContent() {
     outputTranslation(translit, hebrew);
 }
 
+function changeGenderTranslation(gender) {
+    let num = $(customNum).val();
+    let translit = translateNumber(num, 'rus', gender);
+    let hebrew = translateNumber(num, 'heb', gender);
+    outputTranslation(translit, hebrew);
+}
 
 /** Events handlers **/
 /* Page load */

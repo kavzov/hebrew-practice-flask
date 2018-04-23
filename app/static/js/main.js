@@ -30,6 +30,14 @@ function isTranslitLang(lang) {
     return lang === translitLang;
 }
 
+function isRussian(lang) {
+    return isTranslitLang(lang);
+}
+
+function isHebrew(lang) {
+    return isTranslitLang(lang);
+}
+
 function outputHTML(node, html) {
     $(node).hide().html(html).fadeIn(500);
 }
@@ -103,7 +111,3 @@ function showTranslationOrNewTask() {
         outputContent();
     }
 }
-
-$('#menu-sign').on('click', function() {
-    $('#menu-items').toggle(200);
-});

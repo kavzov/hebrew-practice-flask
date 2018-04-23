@@ -9,7 +9,7 @@ let maxNum = '#max-num';
 
 /** Functions **/
 function outputContent() {
-    let gender = 1;     // TODO take from radio input
+    let gender = getGender();
     let min = parseInt($(minNum).val());
     let max = parseInt($(maxNum).val()) + 1;
     if ($(maxNum).val() > maxNumVal) $(maxNum).val(maxNumVal);
@@ -34,7 +34,12 @@ function outputContent() {
     hideTranslation();
 }
 
-
+function changeGenderTranslation(gender) {
+    let num = taskArea.text();
+    let translit = translateNumber(num, 'rus', gender);
+    let hebrew = translateNumber(num, 'heb', gender);
+    outputTranslation(translit, hebrew);
+}
 /** Events **/
 /* Page load */
 page.ready(function() {

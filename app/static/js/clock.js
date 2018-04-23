@@ -30,37 +30,42 @@ function formTimeStr(hrs, min) {
     return hrs + ':' + min;
 }
 
-function translateTime(hrs, min, lang) {
+function translateTime(hrs, min, lang, gender) {
     /* Translates `hrs` and `min` to `lang` and forms a string */
     let str = '';
     if (min < 40) {
         str = translateNumber(hrs, lang);
         if (min === 0) {
-            str += (lang === 'rus') ? ' бидъю́к' : ' בדיוק';
+            str += (isRussian(lang)) ? ' бидъю́к' : ' בדיוק';
         } else if (min <= 20) {
             if (min === 15) {
-                str += (lang === 'rus') ? ' ва рэ́ва' : ' וַרֶבַע';
+                str += (isRussian(lang)) ? ' ва рэ́ва' : ' וַרֶבַע';
             } else {
                 str += getNumPrep(min, lang);
-                str += translateNumber(min, lang);
-                if (min !== 20) str += dakot(lang);
+                str += translateNumber(min, lang, gender);
+                if (min !== 20 && isFemale(gender))
+                    str += dakot(lang);
             }
         } else {
             if (min === 30) {
-                str += (lang === 'rus') ? ' ва хэ́ци' : ' וַחֵצִי';
+                str += (isRussian(lang)) ? ' ва хэ́ци' : ' וַחֵצִי';
             } else {
-                str += ' ' + translateNumber(min, lang) + dakot(lang);  /* make male minutes */
+                str += ' ' + translateNumber(min, lang, gender);
+                if (isFemale(gender))
+                    str += dakot(lang);
             }
         }
     } else {
         if (min === 40) {
-            str = translateNumber(60 - min, lang);
+            str = translateNumber(60 - min, lang, gender);
         } else if (min === 45) {
-            str = (lang === 'rus') ? 'рэ́ва ' : 'רֶבַע ';
+            str = (isRussian(lang)) ? 'рэ́ва ' : 'רֶבַע ';
         } else {
-            str = translateNumber(60 - min, lang) + dakot(lang);
+            str = translateNumber(60 - min, lang, gender);
+                if (isFemale(gender))
+                    str += dakot(lang);
         }
-        str += (lang === 'rus') ? ' лэ ' : ' לְ';
+        str += (isRussian(lang)) ? ' лэ ' : ' לְ';
         str += translateNumber(hrs + 1, lang);
     }
     return str;
@@ -68,10 +73,11 @@ function translateTime(hrs, min, lang) {
 
 function outputContent() {
     /* Outputs digital time, button title, translation (and hide it), ungreencolorize button (if there is) */
+    let gender = getGender();
     let hours = getRandHours();
     let minutes = getRandMinutes(5);
-    let translit = translateTime(hours, minutes, 'rus');
-    let hebrew = translateTime(hours, minutes, 'heb');
+    let translit = translateTime(hours, minutes, 'rus', gender);
+    let hebrew = translateTime(hours, minutes, 'heb', gender);
     hours = set0hrsTo00(hours);                // '0' hours -> '00'
     minutes = setMinutesLeadZero(minutes);     // 'N' min -> '0N'
     let taskStr = formTimeStr(hours, minutes);
@@ -82,6 +88,16 @@ function outputContent() {
     outputTranslation(translit, hebrew);
     hideTranslation();
 }
+
+function changeGenderTranslation(gender) {
+    let time = taskArea.text().split(':');
+    let hours = parseInt(time[0]);
+    let minutes = parseInt(time[1]);
+    let translit = translateTime(hours, minutes, 'rus', gender);
+    let hebrew = translateTime(hours, minutes, 'heb', gender);
+    outputTranslation(translit, hebrew);
+}
+
 
 /** Events handlers **/
 /* Page load */
