@@ -4,7 +4,7 @@ from app import app
 
 @app.route('/')
 def index():
-    return "Hebrew practice!"
+    return render_template('index.html')
 
 
 @app.route('/abc')
