@@ -5,6 +5,7 @@ body {
     overflow-x: hidden;  /* hide horizontal scroll after `form-row` bootstrap class */
 }
 
+/* Menu Drawer inherit */
 .drawer-menu-item {
     padding: .5em .5em .5em 1em;
     font-family: 'Source Sans Pro', sans-serif;
@@ -12,17 +13,11 @@ body {
     font-size: 1.1em;
     color: #222;
 }
+
 .drawer-menu-item:hover {
     background-color: #f5f5f5;
     text-decoration: none;
     color: #000;
-}
-
-.gender-choice {
-    /*margin: -1.75em auto .85em;*/
-    text-align: center;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 300;
 }
 
 /* Task */
@@ -31,6 +26,13 @@ body {
     font-size: 5em;
     line-height: 1.2em;
     /*margin-bottom: .3em;*/
+}
+
+/* Gender choice radio input */
+.gender-choice {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
 }
 
 /* Translate button */
