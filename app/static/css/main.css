@@ -65,7 +65,7 @@ body {
 }
 
 /* Gender choice radio input */
-.gender-choice {
+.gender-choice { margin:.25em 0 .75em;
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
