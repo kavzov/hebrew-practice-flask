@@ -13,13 +13,13 @@ def alphabet():
 
 
 @app.route('/numbers')
-def custom_numbers():
-    return render_template('custom_numbers.html')
+def num_custom():
+    return render_template('num_custom.html')
 
 
 @app.route('/random')
-def random_numbers():
-    return render_template('random_numbers.html')
+def num_random():
+    return render_template('num_random.html')
 
 
 @app.route('/clock')
