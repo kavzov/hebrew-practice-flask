@@ -1,7 +1,8 @@
 # Hebrew practice
-Hebrew practice excercises. For russian users.
-
-[Web version](http://82.146.47.100)
+Hebrew practice excercises for russian users.
+Link: [82.146.47.100](http://82.146.47.100)
+#### Used
+- HTML, CSS, jQuery
 - Flask
 - Gunicorn
 - Nginx
