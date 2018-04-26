@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/clock.css') }}">
 {% endblock %}
 
+{% block custom_input %}
+<div class="gender-choice" style="margin:.5em auto -.15em;"><span style="font-size:.9em;line-height:2em;">Интервал:</span><br>
+        <label><input type="radio" name="random-time-interval" value="">&nbsp;1 мин</label>&emsp;
+        <label><input type="radio" name="random-time-interval" value="5" checked>&nbsp;5 мин</label>
+</div>
+{% endblock %}
+
 {% block javascript %}
     {{ super() }}
     <script type="text/javascript" src="{{ url_for('static', filename='js/num_main.js') }}"></script>
