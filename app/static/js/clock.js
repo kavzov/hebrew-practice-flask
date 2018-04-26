@@ -3,7 +3,7 @@ function getRandHours() {
     return getRandInt(0, 12);
 }
 
-function getRandMinutes(multiple) {
+function getRandMinutes(multiple=1) {
     let minutes = getRandInt(0, 60);
     // Counts with multiple if it set
     if (multiple)
@@ -41,10 +41,21 @@ function translateTime(hrs, min, lang, gender) {
         str = translateNumber(hrs, lang);
         if (min === 0) {
             str += (isRussian(lang)) ? ' бидъю́к' : ' בדיוק';
+        } else if (min === 1) {
+            if (isFemale(gender)) {
+                str += (isRussian(lang)) ? ' вэ дака́ аха́т ' : ' ודַקָה אַחַת';
+            } else {
+                str += (isRussian(lang)) ? ' вэ эха́д' : ' ואֶחַד';
+            }
+        } else if (min === 2) {
+            if (isFemale(gender)) {
+                str += (isRussian(lang)) ? ' вэ штей дакóт' : ' ושְׁתֵּי דַקוֹת';
+            } else {
+                str += (isRussian(lang)) ? ' вэ шна́йм' : ' ושְׁנַּיִים';
+            }
         } else if (min <= 20) {
             if (min === 15) {
                 str += (isRussian(lang)) ? ' ва рэ́ва' : ' וַרֶבַע';
-                console.log(str);
             } else {
                 str += getNumPrep(min, lang);
                 str += translateNumber(min, lang, gender);
@@ -69,6 +80,18 @@ function translateTime(hrs, min, lang, gender) {
             str += (isRussian(lang)) ? ' [дакóт]' : '&#x202B; [דַקוֹת]';
         } else if (min === 45) {
             str = (isRussian(lang)) ? 'рэ́ва ' : 'רֶבַע ';
+        } else if (min === 58) {
+            if (isFemale(gender)) {
+                str += (isRussian(lang)) ? 'штей дакóт ' : 'ושְׁתֵּי דַקוֹת ';
+            } else {
+                str += (isRussian(lang)) ? 'шна́йм ' : 'ושְׁנַּיִים ';
+            }
+        } else if (min === 59) {
+            if (isFemale(gender)) {
+                str += (isRussian(lang)) ? 'дака́ аха́т ' : 'דַקָה אַחַת ';
+            } else {
+                str += (isRussian(lang)) ? 'эха́д ' : 'אֶחַד ';
+            }
         } else {
             str = translateNumber(60 - min, lang, gender);
                 if (isFemale(gender))
@@ -84,7 +107,7 @@ function outputContent() {
     /* Outputs digital time, button title, translation (and hide it), ungreencolorize button (if there is) */
     let gender = getGender();
     let hours = getRandHours();
-    let minutes = getRandMinutes(5);
+    let minutes = getRandMinutes();
     let translit = translateTime(hours, minutes, 'rus', gender);
     let hebrew = translateTime(hours, minutes, 'heb', gender);
     hours = set0hrsTo00(hours);                // '0' hours -> '00'
