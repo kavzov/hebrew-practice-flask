@@ -19,6 +19,8 @@
 </div>
 {% endblock %}
 
+{% block task_class %}{% endblock %}
+
 {% block javascript %}
 {{ super() }}
 <script type="text/javascript" src="{{ url_for('static', filename='js/num_main.js') }}"></script>

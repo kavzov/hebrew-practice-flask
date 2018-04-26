@@ -46,7 +46,9 @@
 {% block custom_input %}{% endblock %}
 
 <!-- Task -->
-<div id="task"></div>
+<div id="task">
+    <span class="{% block task_class %}task-view-default{% endblock %}"></span>
+</div>
 
 {% block gender_choice %}
 <div class="gender-choice">
