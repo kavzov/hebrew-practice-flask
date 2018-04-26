@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+{% block title %}Время{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/num_main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/time.css') }}">
+{% endblock %}
+
+{% block custom_input %}
+<!-- Custom hours minutes fields -->
+<div id="min-max-input" class="form-row">
+    <div class="col-3 col-lg-5 col-sm-4"></div>
+    <div class="col">
+        <input id="time-custom-hours" class="form-control" type="number" value="00" autofocus>
+    </div>
+    <div class="col text-right">
+        <input id="time-custom-minutes" class="form-control" type="number" value="00">
+    </div>
+    <div class="col-3 col-lg-5 col-sm-4"></div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/num_main.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/time_random.js') }}"></script>
+{% endblock %}
