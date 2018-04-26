@@ -44,11 +44,15 @@ function translateTime(hrs, min, lang, gender) {
         } else if (min <= 20) {
             if (min === 15) {
                 str += (isRussian(lang)) ? ' ва рэ́ва' : ' וַרֶבַע';
+                console.log(str);
             } else {
                 str += getNumPrep(min, lang);
                 str += translateNumber(min, lang, gender);
                 if (min !== 20 && isFemale(gender))
                     str += dakot(lang);
+                else if (min === 20) {
+                    str += (isRussian(lang)) ? ' [дакóт]' : '&#x202B; [דַקוֹת]';   // https://stackoverflow.com/questions/2153662/bi-directional-browser-title-hebrew-and-english-characters-in-title
+                }
             }
         } else {
             if (min === 30) {
@@ -62,6 +66,7 @@ function translateTime(hrs, min, lang, gender) {
     } else {
         if (min === 40) {
             str = translateNumber(60 - min, lang, gender);
+            str += (isRussian(lang)) ? ' [дакóт]' : '&#x202B; [דַקוֹת]';
         } else if (min === 45) {
             str = (isRussian(lang)) ? 'рэ́ва ' : 'רֶבַע ';
         } else {
