@@ -63,11 +63,19 @@ body {
     font-size: 5em;
     line-height: 1.2em;
 }
+.task-view-default {
+    display: inline-block;
+    padding: .1em .3em;
+    margin: .1em 0 .2em;
+    background-color: #f5f5f5;
+}
 
 /* Gender choice radio input */
-.gender-choice { margin:.25em 0 .75em;
+.gender-choice {
+    margin:.25em 0 .75em;
     text-align: center;
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: .95em;
     font-weight: 300;
 }
 .gender-choice>label, .gender-choice>label>input {
