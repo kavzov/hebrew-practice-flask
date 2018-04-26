@@ -3,11 +3,13 @@ function getRandHours() {
     return getRandInt(0, 12);
 }
 
-function getRandMinutes(multiple=1) {
+function getRandMinutes() {
     let minutes = getRandInt(0, 60);
-    // Counts with multiple if it set
-    if (multiple)
-        while (minutes % multiple !== 0) {
+    let checkedIntervalNode = '[name="random-time-interval"]:checked';
+    let interval = parseInt($(checkedIntervalNode).val());
+    // Counts with interval > 1 minute
+    if (interval)
+        while (minutes % interval !== 0) {
             minutes = getRandInt(0, 60);
         }
     return minutes;
