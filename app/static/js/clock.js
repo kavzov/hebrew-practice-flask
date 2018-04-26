@@ -22,6 +22,10 @@ function set0hrsTo00(hours) {
     return (hours) ? hours : '00';
 }
 
+function nextHour(hour) {
+    return (hour === 12) ? 1 : hour + 1;
+}
+
 function setMinutesLeadZero(minutes) {
     return (minutes < 10) ? '0' + minutes : minutes;
 }
@@ -66,7 +70,7 @@ function translateTime(hrs, min, lang, gender) {
                     str += dakot(lang);
         }
         str += (isRussian(lang)) ? ' лэ ' : ' לְ';
-        str += translateNumber(hrs + 1, lang);
+        str += translateNumber(nextHour(hrs), lang);
     }
     return str;
 }
