@@ -99,7 +99,7 @@ function translateTime(hrs, min, lang, gender) {
                 if (isFemale(gender))
                     str += dakot(lang);
         }
-        str += (isRussian(lang)) ? ' лэ ' : ' לְ';
+        str += (isRussian(lang)) ? ' ле ' : ' לְ';
         str += translateNumber(nextHour(hrs), lang);
     }
     return str;
