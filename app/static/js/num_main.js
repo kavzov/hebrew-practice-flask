@@ -48,8 +48,8 @@ function getDigPrep(dig, lang) {
     let digPref = {
         '1': ' вэ ', '2': ' у ',  '3': ' вэ ',  '4': ' вэ ',  '5': ' вэ ',   '6': ' ва ',   '7': ' ва ',   '8': ' у ',   '9': ' ва ',
     };
-    return (isRussian(lang)) ? digPref[dig] : ' ו';
-    // return (lang === 'rus') ? ' вэ ' : ' ו';
+    // return (isRussian(lang)) ? digPref[dig] : ' ו';
+    return (lang === 'rus') ? ' вэ ' : ' ו';
 }
 
 /* temp for 2> digit preposition */
