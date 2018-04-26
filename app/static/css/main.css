@@ -133,13 +133,13 @@ body {
 }
 
 @media (max-width: 600px) {
-        #main-img {
-            margin: 1.2em auto .3em;
-            width: 88px;
+    #main-img {
+        margin: 1.2em auto .3em;
+        width: 90px;
     }
     .title-rus {
         font-family: serif;
-        font-size: 2em;
+        font-size: 2.1em;
         font-style: italic;
         text-align: center;
     }
@@ -149,7 +149,7 @@ body {
         color: #359;
         text-align: center;
     }
-    .title-nav {
-        font-size: .9em;
+    .title-nav { line-height: 2em;
+        font-size: .95em;
     }
 }
