@@ -4,7 +4,7 @@
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/num_main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/clock.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/time.css') }}">
 {% endblock %}
 
 {% block custom_input %}
@@ -17,5 +17,5 @@
 {% block javascript %}
     {{ super() }}
     <script type="text/javascript" src="{{ url_for('static', filename='js/num_main.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/clock.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/time_random.js') }}"></script>
 {% endblock %}

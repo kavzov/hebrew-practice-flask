@@ -12,16 +12,21 @@ def alphabet():
     return render_template('alphabet.html')
 
 
-@app.route('/numbers')
+@app.route('/num_custom')
 def num_custom():
     return render_template('num_custom.html')
 
 
-@app.route('/random')
+@app.route('/num_random')
 def num_random():
     return render_template('num_random.html')
 
 
-@app.route('/clock')
-def clock():
-    return render_template('clock.html')
+@app.route('/time_custom')
+def time_custom():
+    return render_template('time_custom.html')
+
+
+@app.route('/time_random')
+def time_random():
+    return render_template('time_random.html')
