@@ -3,7 +3,7 @@ let toLang = 'heb';
 let translitLang = 'rus';
 let btnTitleTranslate = 'Перевод';
 let btnTitleMore = 'Ещё';
-
+let fadeTime = 500;
 
 /** Objects **/
 let page = $(document);
@@ -39,7 +39,7 @@ function isHebrew(lang) {
 }
 
 function outputHTML(node, html) {
-    $(node).hide().html(html).fadeIn(500);
+    $(node).hide().html(html).fadeIn(fadeTime);
 }
 
 function outputTask(taskStr) {
@@ -87,7 +87,7 @@ function showNode(node, time) {
 }
 
 function showTranslation() {
-    showNode(translationArea, 250);
+    showNode(translationArea, fadeTime);
 }
 
 function setNodeAttr(node, name, val) {
