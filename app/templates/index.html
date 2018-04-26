@@ -3,12 +3,15 @@
 {% block title %}Практика иврита{% endblock %}
 
 {% block content %}
+<div class="text-center"><img id="main-img" src="{{ url_for('static', filename='img/hebrew.png') }}"></div>
+
 <div class="title-rus">Практика иврита</div>
 <div class="title-heb">תרגול עברית</div>
 <div class="title-nav">
-    <a href="{{ url_for('alphabet') }}" title="Случайные буквы алфавита">Алфавит</a>&emsp;
-    <a href="{{ url_for('time_random') }}" title="Случайное время">Время</a>&emsp;
-    <a href="{{ url_for('num_custom') }}" title="Перевести число на иврит">Ввод числа</a>&emsp;
-    <a href="{{ url_for('num_random') }}" title="Случайное число">Случайное число</a>
+    <a href="{{ url_for('alphabet') }}" title="Случайные буквы алфавита">Алфавит</a><br>
+    <a href="{{ url_for('num_random') }}" title="Случайное число">Числа</a><br>
+    <a href="{{ url_for('num_custom') }}" title="Перевести произвольное число на иврит">Перевести число</a><br>
+    <a href="{{ url_for('time_random') }}" title="Случайное время">Время</a><br>
+    <a href="{{ url_for('time_custom') }}" title="Перевести произвольное время на иврит">Перевести время</a><br>
 </div>
 {% endblock %}

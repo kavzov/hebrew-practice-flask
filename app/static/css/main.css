@@ -6,17 +6,20 @@ body {
 }
 
 /* Title */
+#main-img {
+    margin: 1.8em auto .3em;
+    width: 128px;
+}
 .title-rus {
-    margin-top: 1.5em;
     font-family: serif;
-    font-size: 3em;
+    font-size: 2.9em;
     font-style: italic;
     text-align: center;
 }
 .title-heb {
     font-family: 'Tinos', serif;
-    font-size: 3em;
-    color:#359;
+    font-size: 2.1em;
+    color: #359;
     text-align: center;
 }
 .title-menu {
@@ -130,8 +133,11 @@ body {
 }
 
 @media (max-width: 600px) {
+        #main-img {
+            margin: 1.2em auto .3em;
+            width: 88px;
+    }
     .title-rus {
-        margin-top: 2em;
         font-family: serif;
         font-size: 2em;
         font-style: italic;
@@ -139,8 +145,8 @@ body {
     }
     .title-heb {
         font-family: 'Tinos', serif;
-        font-size: 2em;
-        color:#359;
+        font-size: 1.6em;
+        color: #359;
         text-align: center;
     }
     .title-nav {
