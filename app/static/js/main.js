@@ -7,7 +7,7 @@ let fadeTime = 500;
 
 /** Objects **/
 let page = $(document);
-let taskArea = $('#task');
+let taskArea = $('#task>span');
 let translateBtn = $('#translate-btn').find('>input');
 let translationArea = $('#translation');
 
