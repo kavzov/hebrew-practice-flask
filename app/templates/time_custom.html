@@ -1,6 +1,6 @@
 {% extends "main.html" %}
 
-{% block title %}Время{% endblock %}
+{% block title %}Перевести время{% endblock %}
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/num_main.css') }}">
@@ -11,7 +11,7 @@
 {% block custom_input %}
 <!-- Custom hours minutes fields -->
 <div id="custom-time" class="form-row">
-    <div class="col-2 col-sm-3 col-md-4 col-lg-5"></div>
+    <div class="col-2 col-sm-3 col-lg-4"></div>
     <div class="col">
         <!--<input id="custom-time-hours" class="form-control" name="custom-hours" type="number" value="00" autofocus>-->
         <div class="hrs-title">Часы</div>
@@ -97,7 +97,7 @@
             <option value="59">59</option>
         </select>
     </div>
-    <div class="col-2 col-sm-3 col-md-4 col-lg-5"></div>
+    <div class="col-2 col-sm-3 col-lg-4"></div>
 </div>
 {% endblock %}
 
