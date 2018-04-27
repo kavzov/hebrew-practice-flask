@@ -1,5 +1,9 @@
 #custom-num {
-    font-size: 2em;
-    margin-top: .5em !important;
+    font-family: 'Source Sans Pro';
+    font-size: 2.5em;
+    font-weight: 300;
     text-align: center;
+    text-align-last: center;
+    height: 2em;
+    margin-top: .5em;
 }
