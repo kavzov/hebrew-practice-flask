@@ -15,7 +15,7 @@
     <div class="col">
         <!--<input id="custom-time-hours" class="form-control" name="custom-hours" type="number" value="00" autofocus>-->
         <div class="hrs-title">Часы</div>
-        <select name="custom-hours" class="form-control">
+        <select id="custom-time-hours" name="custom-hours" class="form-control">
             <option value="0">00</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -34,17 +34,17 @@
     <div class="col text-right">
         <!--<input id="custom-time-minutes" class="form-control" name="custom-minutes" type="number" value="00">-->
         <div class="hrs-title">Минуты</div>
-        <select name="custom-minutes" class="form-control">
+        <select id="custom-time-minutes" name="custom-minutes" class="form-control">
             <option value="0">00</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+            <option value="4">04</option>
+            <option value="5">05</option>
+            <option value="6">06</option>
+            <option value="7">07</option>
+            <option value="8">08</option>
+            <option value="9">09</option>
             <option value="10">10</option>
             <option value="11">11</option>
             <option value="12">12</option>
@@ -101,8 +101,12 @@
 </div>
 {% endblock %}
 
+{% block task %}{% endblock %}
+{% block translate_button %}{% endblock %}
+
 {% block javascript %}
     {{ super() }}
     <script type="text/javascript" src="{{ url_for('static', filename='js/num_main.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/time_random.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/time_main.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/time_custom.js') }}"></script>
 {% endblock %}
