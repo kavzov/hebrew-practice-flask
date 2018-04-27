@@ -63,9 +63,11 @@ body {
 
 /* Task */
 #task {
-    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
     font-size: 5em;
-    line-height: 1.2em;
+    text-align: center;
+    line-height: 1.1em;
 }
 .task-view-default {
     display: inline-block;
