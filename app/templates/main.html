@@ -47,28 +47,35 @@
 
 {% block custom_input %}{% endblock %}
 
+{% block task %}
 <!-- Task -->
 <div id="task">
     <span class="{% block task_class %}task-view-default{% endblock %}"></span>
 </div>
+{% endblock %}
 
 {% block gender_choice %}
+<!-- Gender choice -->
 <div class="gender-choice">
     <label><input type="radio" name="gender" value="1" checked>&nbsp;Жен</label>&ensp;
     <label><input type="radio" name="gender" value="0">&nbsp;Муж</label>
 </div>
 {% endblock %}
 
+{% block translate_button %}
 <!-- Translate button -->
 <div id="translate-btn">
     <input class="btn btn-primary" type="button">
 </div>
+{% endblock %}
 
+{% block translation %}
 <!-- Translation -->
 <div id="translation">
     <div class="translit"></div>
     <div class="hebrew"></div>
 </div>
+{% endblock %}
 
 {% endblock content %}
 </main>
