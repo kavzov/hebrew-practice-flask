@@ -15,12 +15,12 @@ function outputContent() {
     if ($(maxNum).val() > maxNumVal) $(maxNum).val(maxNumVal);
     if (parseInt($(minNum).val()) > maxNumVal) $(minNum).val(minNumVal);
     /* generate random number */
-    // get last number
-    let lastNum = taskArea.text();
     // generate new
     let randNum = getRandInt(min, max);
-    // if new == last, generate till new
-    while (lastNum == randNum) {
+    // get last number
+    let lastNum = parseInt(taskArea.text());
+    // if new number == last, generate till !=
+    while (lastNum === randNum) {
         randNum = getRandInt(min, max);
     }
     let taskStr = randNum;
@@ -76,4 +76,3 @@ function checkEnterOnMinMax(e) {
     }
 }
 $(minNum + ', ' + maxNum).on('keypress', function(e) { checkEnterOnMinMax(e); });
-// $(minNum).on('keypress', function(e) { checkEnterOnMinMax(e); });

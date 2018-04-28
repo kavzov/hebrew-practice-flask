@@ -89,10 +89,6 @@ function getGender() {
     return $('[name="gender"]:checked').val();
 }
 
-function isMale(gender) {
-    return gender == 0;
-}
-
 function isFemale(gender) {
     return gender == 1;
 }

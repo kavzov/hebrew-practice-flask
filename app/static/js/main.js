@@ -5,7 +5,7 @@ let btnTitleTranslate = 'Перевод';
 let btnTitleMore = 'Ещё';
 let fadeTime = 500;
 
-/** Objects **/
+/** Nodes **/
 let page = $(document);
 let taskArea = $('#task>span');
 let translateBtn = $('#translate-btn').find('>input');
@@ -31,10 +31,6 @@ function isTranslitLang(lang) {
 }
 
 function isRussian(lang) {
-    return isTranslitLang(lang);
-}
-
-function isHebrew(lang) {
     return isTranslitLang(lang);
 }
 
