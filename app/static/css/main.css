@@ -8,7 +8,7 @@ body {
 /* Title */
 #main-img {
     margin: 1.8em auto .3em;
-    width: 128px;
+    width: 60px;
 }
 .title-rus {
     font-family: serif;
@@ -138,7 +138,7 @@ body {
 @media (max-width: 600px) {
     #main-img {
         margin: 1.2em auto .3em;
-        width: 90px;
+        width: 60px;
     }
     .title-rus {
         font-family: serif;
